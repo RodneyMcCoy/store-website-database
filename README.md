@@ -14,7 +14,7 @@
 
 
 <!-- PROJECT LOGO -->
-![](icon1.png)
+![](icon.png)
 
 <h3 align="center">project_title</h3>
 
