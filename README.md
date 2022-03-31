@@ -125,24 +125,26 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 
 ### David Watters
-
-#### Champion: Django Back End
-
-#### Contact Information: ----
+- Champion
+  - Django Back End
+- Contact Information
+  - *INSERT CONTACT INFO HERE*
 
 
 ### Huunter Leppuk
-
-#### Champion: IDK. Faker / Mockaroo or SQL
-
-#### Contact Information: ----
+- Champion
+  - IDK. Faker / Mockaroo or SQL
+- Contact Information
+  - *INSERT CONTACT INFO HERE*
 
 
 ### Rodney McCoy
-
-#### Champion: GitHub Repository and Write Ups
-
-#### Contact Information: rbmj2001@outlook.com
+- Champion
+  - GitHub Repository and Project Reports
+- Contact Information
+  - 208-860-4186
+  - rbmj2001@outlook.com
+  - *GitHub Profile*
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
