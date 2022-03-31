@@ -15,7 +15,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img width="460" height="300" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+  <img width="460" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
 <h3 align="center">Store Website Database</h3>
