@@ -1,8 +1,8 @@
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
-<p align="right">
-  <img width="200" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+<p align="center">
+  <img width="400" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
 <h3 align="center">Store Website Database</h3>
@@ -11,7 +11,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-## Tables of Contents
+# Tables of Contents
 
 <ol>
   <li>
@@ -29,7 +29,7 @@
   </li>
   <li><a href="#usage">Usage</a></li>
   <li><a href="#roadmap">Roadmap</a></li>
-  <li><a href="#Contributors">Contributors</a></li>
+  <li><a href="#contributors">Contributors</a></li>
   <li><a href="#license">License</a></li>
   <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ol>
@@ -37,7 +37,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -47,7 +47,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
-### Built With
+## Built With
 
 * [Django](https://www.djangoproject.com/)
   * Web Framework used to develop the front end for the website.
@@ -62,12 +62,12 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+# Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+## Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -75,7 +75,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+## Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -96,7 +96,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+# Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -107,7 +107,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+# Roadmap
 
 - [ ] Feature 1
 - [ ] Feature 2
@@ -121,24 +121,24 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 
 <!-- CONTRIBUTORS -->
-## Contributors
+# Contributors
 
 
-### David Watters
+**David Watters**
 - Champion
   - Django Back End
 - Contact Information
   - *INSERT CONTACT INFO HERE*
 
 
-### Huunter Leppuk
+**Hunter Leppuk**
 - Champion
   - IDK. Faker / Mockaroo or SQL
 - Contact Information
   - *INSERT CONTACT INFO HERE*
 
 
-### Rodney McCoy
+**Rodney McCoy**
 - Champion
   - GitHub Repository and Project Reports
 - Contact Information
@@ -152,7 +152,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 
 <!-- LICENSE -->
-## License
+# License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
@@ -160,17 +160,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
-<!-- CONTACT -->
-## Contact
-
-Project Link: [https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md](https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+# Acknowledgments
 
 * []()
 * []()
