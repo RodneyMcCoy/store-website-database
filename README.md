@@ -52,11 +52,11 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [Django](https://www.djangoproject.com/)
- * Web Framework used to develop the front end for the website.
+  * Web Framework used to develop the front end for the website.
 * [SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15)
- * Database Service
+  * Database Service
 * [Faker / Mockaroo](https://www.google.com)
- * Use to populate the database with data
+  * Use to populate the database with data
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -126,11 +126,11 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 ## Contributors
 
 - David Watters
- - Champion: Django Back End
+  - Champion: Django Back End
 - Huunter Leppuk
- - Champion: IDK. Faker / Mockaroo or SQL
+  - Champion: IDK. Faker / Mockaroo or SQL
 - Rodney McCoy
- - Champion: GitHub Repository and Write Ups
+  - Champion: GitHub Repository and Write Ups
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -148,9 +148,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+David Watters - Put contact information for resume
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Huunter Leppuk - Put contact ifnormation for resume 
+
+Rodney McCoy - 208-860-4186 - rbmj2001@outlook.com
+
+Project Link: [https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md](https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
