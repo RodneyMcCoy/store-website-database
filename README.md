@@ -1,8 +1,8 @@
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
-<p align="center">
-  <img width="500" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+<p align="right">
+  <img width="200" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
 <h3 align="center">Store Website Database</h3>
