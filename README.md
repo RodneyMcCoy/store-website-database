@@ -12,27 +12,27 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Tables of Contents
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#Contributors">Contributors</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+
+<ol>
+  <li>
+    <a href="#about-the-project">About The Project</a>
+    <ul>
+      <li><a href="#built-with">Built With</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#getting-started">Getting Started</a>
+    <ul>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
+    </ul>
+  </li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#roadmap">Roadmap</a></li>
+  <li><a href="#Contributors">Contributors</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#acknowledgments">Acknowledgments</a></li>
+</ol>
 
 
 
@@ -123,12 +123,27 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTRIBUTORS -->
 ## Contributors
 
-- David Watters
-  - Champion: Django Back End
-- Huunter Leppuk
-  - Champion: IDK. Faker / Mockaroo or SQL
-- Rodney McCoy
-  - Champion: GitHub Repository and Write Ups
+
+### David Watters
+
+#### Champion: Django Back End
+
+#### Contact Information: ----
+
+
+### Huunter Leppuk
+
+#### Champion: IDK. Faker / Mockaroo or SQL
+
+#### Contact Information: ----
+
+
+### Rodney McCoy
+
+#### Champion: GitHub Repository and Write Ups
+
+#### Contact Information: rbmj2001@outlook.com
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -145,12 +160,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
-David Watters - Put contact information for resume
-
-Huunter Leppuk - Put contact ifnormation for resume 
-
-Rodney McCoy - 208-860-4186 - rbmj2001@outlook.com
 
 Project Link: [https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md](https://github.com/RodneyMcCoy/store-website-database/edit/main/README.md)
 
