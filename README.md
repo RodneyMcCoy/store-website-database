@@ -14,10 +14,11 @@
 
 
 <!-- PROJECT LOGO -->
-![](icon1.png)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+</p>
 
-<h3 align="center">Store Website with Databaseproject_title</h3>
-
+<h3 align="center">Store Website Database</h3>
 
 </div>
 
