@@ -1,6 +1,7 @@
 <div id="top"></div>
 
-<!-- PROJECT LOGO -->
+
+<!-- TITLE -->
 <p align="center">
   <img width="400" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
@@ -10,34 +11,24 @@
 </div>
 
 
+
 <!-- TABLE OF CONTENTS -->
 # Tables of Contents
 
 <ol>
-  <li>
-    <a href="#about-the-project">About The Project</a>
-    <ul>
-      <li><a href="#built-with">Built With</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#getting-started">Getting Started</a>
-    <ul>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#installation">Installation</a></li>
-    </ul>
-  </li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#built-with">Built With</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#usage">Usage</a></li>
-  <li><a href="#roadmap">Roadmap</a></li>
+  <li><a href="#features">Features</a></li>
   <li><a href="#contributors">Contributors</a></li>
   <li><a href="#license">License</a></li>
-  <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ol>
 
 
 
-<!-- ABOUT THE PROJECT -->
-# About The Project
+<!-- ABOUT -->
+# About
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -47,14 +38,15 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
-## Built With
+<!-- BUILT WITH -->
+# Built With
 
 * [Django](https://www.djangoproject.com/)
-  * Web Framework used to develop the front end for the website.
+  * Web Framework used to develop the front end for the website. *More Detail Required*
 * [SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15)
-  * Database Service
+  * Database Service. *More Detail Required*
 * [Faker / Mockaroo](https://www.google.com)
-  * Use to populate the database with data
+  * Use to populate the database with data. *More Detail Required*
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -64,32 +56,16 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 # Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Website
+*Insert link to website here*
 
 ## Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+*Describe Prerequisites required to run back end*
 
 ## Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. *Steps to install back end here*
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -97,6 +73,9 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 # Usage
+
+
+*More Detail Required*
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -106,15 +85,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-<!-- ROADMAP -->
-# Roadmap
+<!-- FEATURES -->
+# Features
 
 - [ ] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+This project is finished. In the forseeable future, no more features will be implimented.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -161,14 +140,6 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/RodneyMcCo
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-# Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
