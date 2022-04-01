@@ -2,11 +2,13 @@
 
 
 <!-- TITLE -->
+# Store Website Database
+
 <p align="center">
   <img width="400" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
-<h3 align="center">Store Website Database</h3>
+SHORT DESCRIPTION OF THE PROJECT (About Section)
 
 </div>
 
@@ -16,10 +18,9 @@
 # Tables of Contents
 
 <ol>
-  <li><a href="#about">About</a></li>
   <li><a href="#built-with">Built With</a></li>
+  <li><a href="#implimentation">Implimentation</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#usage">Usage</a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#contributors">Contributors</a></li>
   <li><a href="#license">License</a></li>
@@ -27,14 +28,7 @@
 
 
 
-<!-- ABOUT -->
-# About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -53,33 +47,27 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
+<!-- IMPLIMENTATION -->
+# Implimentation
+
+*Describe Impliementation Details Here*
+
+
+
 <!-- GETTING STARTED -->
 # Getting Started
 
-## Website
+**Website**
+
 *Insert link to website here*
 
-## Prerequisites
+**Prerequisites**
 
 *Describe Prerequisites required to run back end*
 
-## Installation
+**Installation**
 
 1. *Steps to install back end here*
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-# Usage
-
-
-*More Detail Required*
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
