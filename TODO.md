@@ -1,1 +1,2 @@
-- [ ] Fill this todo list
+- [ ] Review ER diagram to ensure scheme is 3NF
+- [ ] 
