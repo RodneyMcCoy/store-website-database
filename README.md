@@ -2,13 +2,13 @@
 
 
 <!-- TITLE -->
-# Store Website Database
-
 <p align="center">
-  <img width="400" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+  <img width="250" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
-SHORT DESCRIPTION OF THE PROJECT (About Section)
+<h1 align="center" id="heading">Store Website Database</h1>
+
+<p align="center">A Website implemented using the Python Django Framework</p>
 
 </div>
 
@@ -20,7 +20,7 @@ SHORT DESCRIPTION OF THE PROJECT (About Section)
 <ol>
   <li><a href="#built-with">Built With</a></li>
   <li><a href="#implimentation">Implimentation</a></li>
-  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#setting-up">Setting Up</a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#contributors">Contributors</a></li>
   <li><a href="#license">License</a></li>
@@ -43,7 +43,7 @@ SHORT DESCRIPTION OF THE PROJECT (About Section)
   * Use to populate the database with data. *More Detail Required*
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
@@ -52,10 +52,12 @@ SHORT DESCRIPTION OF THE PROJECT (About Section)
 
 *Describe Impliementation Details Here*
 
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
-<!-- GETTING STARTED -->
-# Getting Started
+
+<!-- Setting Up -->
+# Setting Up
 
 **Website**
 
@@ -69,7 +71,7 @@ SHORT DESCRIPTION OF THE PROJECT (About Section)
 
 1. *Steps to install back end here*
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
@@ -83,7 +85,7 @@ SHORT DESCRIPTION OF THE PROJECT (About Section)
 
 This project is finished. In the forseeable future, no more features will be implimented.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
@@ -91,14 +93,14 @@ This project is finished. In the forseeable future, no more features will be imp
 # Contributors
 
 
-**David Watters**
+**David Waters**
 - Champion
   - Django Back End
 - Contact Information
   - *INSERT CONTACT INFO HERE*
 
 
-**Hunter Leppuk**
+**Hunter Leppek**
 - Champion
   - IDK. Faker / Mockaroo or SQL
 - Contact Information
@@ -114,7 +116,7 @@ This project is finished. In the forseeable future, no more features will be imp
   - *GitHub Profile*
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
@@ -123,7 +125,7 @@ This project is finished. In the forseeable future, no more features will be imp
 
 Distributed under the MIT License. See [`LICENSE`](https://github.com/RodneyMcCoy/store-website-database/blob/main/LICENSE) for more information.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
