@@ -3,25 +3,24 @@
 
 <!-- TITLE -->
 <p align="center">
-  <img width="250" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
+  <img width="275" src="https://github.com/RodneyMcCoy/store-website-database/blob/main/icon1.png">
 </p>
 
-<h1 align="center" id="heading">Store Website Database</h1>
+<h2 align="center" id="heading">A Store Website + Database </h2>
 
-<p align="center">A Website implemented using the Python Django Framework</p>
+<p align="center">This Repo holds the implmentation for the Perfect Purchase <em>(Best Buy)</em> website. The django-based website and associated relational database built here is meant to connect customers and vendors together so various products and services can be bought and sold. <br> <br> <a href="http://example.com/">Website Not Currently Hosted Here</a></p>
 
 </div>
 
 
 
 <!-- TABLE OF CONTENTS -->
-# Tables of Contents
+## Tables of Contents
 
 <ol>
-  <li><a href="#built-with">Built With</a></li>
-  <li><a href="#implimentation">Implimentation</a></li>
   <li><a href="#setting-up">Setting Up</a></li>
   <li><a href="#features">Features</a></li>
+  <li><a href="#built-with">Built With</a></li>
   <li><a href="#contributors">Contributors</a></li>
   <li><a href="#license">License</a></li>
 </ol>
@@ -29,91 +28,118 @@
 
 
 
-
-
-
-<!-- BUILT WITH -->
-# Built With
-
-* [Django](https://www.djangoproject.com/)
-  * Web Framework used to develop the front end for the website. *More Detail Required*
-* [SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15)
-  * Database Service. *More Detail Required*
-* [Faker / Mockaroo](https://www.google.com)
-  * Use to populate the database with data. *More Detail Required*
-
-
-<p align="right">(<a href="#top">to the top</a>)</p>
-
-
-
-<!-- IMPLIMENTATION -->
-# Implimentation
-
-*Describe Impliementation Details Here*
-
-<p align="right">(<a href="#top">to the top</a>)</p>
-
-
-
 <!-- Setting Up -->
-# Setting Up
+## Setting Up
 
-**Website**
-
-*Insert link to website here*
 
 **Prerequisites**
 
 *Describe Prerequisites required to run back end*
 
-**Installation**
+**Running the Website**
 
-1. *Steps to install back end here*
+[Go Here](https://realpython.com/django-setup/)
+
+
+
+
+<!--
+2. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+-->
 
 <p align="right">(<a href="#top">to the top</a>)</p>
+
+
 
 
 
 <!-- FEATURES -->
-# Features
+## Features
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
 
-This project is finished. In the forseeable future, no more features will be implimented.
+- [ ] Vendor and Customer Accounts
+  - [ ] Create registration page to log in / log out and view account information
+  - [ ] Store in the database
+- [ ] Vendor Products / Services / Bundles  
+  - [ ] Vendors can create and view products
+  - [ ] Customers can view all of the products and search by keyword
+  - [ ] Store in the database
+- [ ] Customer Wishlists
+  - [ ] Allow customers to define their wishlists
+  - [ ] Show if there wishlists can be fulfilled
+
 
 <p align="right">(<a href="#top">to the top</a>)</p>
 
 
 
+
+
+<!-- BUILT WITH -->
+## Built With
+
+* [Django](https://www.djangoproject.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [SQLite](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15)
+* [Mockaroo](https://www.mockaroo.com/)
+
+
+<p align="right">(<a href="#top">to the top</a>)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- CONTRIBUTORS -->
-# Contributors
+## Contributors
 
 
-**David Waters**
-- Champion
-  - Django Back End
+David Waters
+- Champion Features
+  - Implimenting the Django Back End
 - Contact Information
-  - *INSERT CONTACT INFO HERE*
+  - elde1366@vandals.uidaho.edu
+  - [GitHub Profile](https://github.com/iTzLegend23)
 
 
-**Hunter Leppek**
-- Champion
-  - IDK. Faker / Mockaroo or SQL
+
+Hunter Leppek
+- Champion Features
+  - Implimenting the Database Scheme using SQLite
+  - Populating it with fake data using Mockaroo
 - Contact Information
-  - *INSERT CONTACT INFO HERE*
+  - lepp8728@vandals.uidaho.edu
+  - [GitHub Profile](https://github.com/Hunter-SE)
 
 
-**Rodney McCoy**
-- Champion
-  - GitHub Repository and Project Reports
+Rodney McCoy
+- Champion Features
+  - Setup and populated the GitHub Repository 
+  - Writing the Documentation and Project Reports
+  - Implimenting the Bootstrap Front End
 - Contact Information
   - 208-860-4186
   - rbmj2001@outlook.com
-  - *GitHub Profile*
+  - [GitHub Profile](https://github.com/RodneyMcCoy)
 
 
 <p align="right">(<a href="#top">to the top</a>)</p>
