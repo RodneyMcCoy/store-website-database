@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 
+# I added this import to try to impliment forms. Might be useless
+from django.http import HttpResponseRedirect
+from .forms import *
 
 # Create your views here.
 
@@ -79,3 +82,46 @@ def about(request):
     }
     return render(request, 'store/about.html', context)
 
+
+def wishlist(request):
+    context = {
+        'title': 'Wishlist'
+    }
+    return render(request, 'store/wishlist.html', context)
+
+
+def listings(request):
+    context = {
+        'title': 'Listings'
+    }
+    return render(request, 'store/listings.html', context)
+
+
+def show_listings(request):
+    if request.method == 'POST':
+        # f = SearchListings(request.POST)
+        f = request.POST.get('search', None)
+        # if f.is_valid():
+        #     return HttpResponseRedirect('/thanks/')
+
+    else:
+        f = ""
+
+    context = {
+        "title": "View Products / Services",
+        "data": f
+    }
+    return render(request, 'store/search_listings.html', context)
+
+def show_bundles(request):
+    if request.method == 'POST':
+        f = request.POST.get('search', None)
+
+    else:
+        f = ""
+
+    context = {
+        "title": "View Bundles",
+        "data": f
+    }
+    return render(request, 'store/search_listings.html', context)

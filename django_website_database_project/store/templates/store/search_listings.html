@@ -1,0 +1,29 @@
+{% extends "store/base.html" %}
+{% block content %}
+    <h1>{{title }}</h1>
+
+    <p>The product type to be searched for is: {{data }}</p>
+
+    <br>
+
+    <p>Sample Table that will be filled with Database Information</p>
+
+    <table>
+        <tr>
+          <th>Product Type</th>
+          <th>Vendor</th>
+          <th>Cost</th>
+        </tr>
+        <tr>
+          <td>Option1</td>
+          <td>Apple</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Option2</td>
+          <td>Samsung</td>
+          <td>$200</td>
+        </tr>
+      </table>
+
+{% endblock content %}

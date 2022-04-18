@@ -30,4 +30,36 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
     {% endif %}
+
+    <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
+        <label for="search">Search for a Product or Service:</label>
+        <select name="search" id="search">
+          <option selected value=""> </option>
+          <option value="phone">Phone</option>
+          <option value="internet">Internet</option>
+          <option value="computer">Computer</option>
+          <option value="repair">Repair</option>
+        </select>
+    
+        <input type="submit" value="Search">
+    </form>
+
+    <br>
+
+    <form name = "search" action = "{% url 'store-search-bundle' %}" method="post">{% csrf_token %}
+        <label for="search">Search for a Bundle with this Item:</label>
+        <select name="search" id="search">
+          <option selected value=""> </option>
+          <option value="phone">Phone</option>
+          <option value="internet">Internet</option>
+          <option value="computer">Computer</option>
+          <option value="repair">Repair</option>
+        </select>
+    
+        <input type="submit" value="Search">
+    </form>
+
+
+    
+
 {% endblock content %}
