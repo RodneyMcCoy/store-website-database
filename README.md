@@ -32,13 +32,34 @@
 ## Setting Up
 
 
-**Prerequisites**
+### Prerequisites
 
-*Describe Prerequisites required to run back end*
+* Install Django with `python -m pip install Django` along with the following packages
+  * SQLite 3
+  * Pillow
+  * crispy forms 
 
-**Running the Website**
+### Running the Website on Windows
 
-[Go Here](https://realpython.com/django-setup/)
+* Clone the repository using `git clone git@github.com:RodneyMcCoy/store-website-database.git` or using *Github Desktop*
+  * You must have an SSH key setup if cloning with SSH
+* Ensure you have the prerequisites installed
+* Located manage.py and run `python manage.py runserver`
+* Navigate to `localhost:8000` to see the server running
+
+
+### Running the Website on Linux
+
+* Clone the repository using `git clone git@github.com:RodneyMcCoy/store-website-database.git`
+  * You must have an SSH key setup
+* Activate the python virtual environment by using `python -m venv env`
+  * This is extremly important since we dont have `apt-get` or access to `sudo` outside of the virtual environment
+  * You can exit the virtual environment using `ctrl-c` or re-enter using `source env/bin/activate`
+* Install the prerequisites as decribed above
+* Pin your dependencies	python -m pip freeze > requirements.txt
+* Locate manage.py and run `python manage.py runserver`
+* Navigate to `localhost:8000` to see the server running. 
+  * **Warning. We can't access local host through PUTTY**
 
 
 
