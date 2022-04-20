@@ -1,4 +1,7 @@
 from distutils.command.upload import upload
+from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
@@ -21,3 +24,28 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+""""
+#Work in progress for different users.
+#This is a condensed version, but still creates errors
+#hence why it is commented
+
+class User(AbstractUser):
+    class Types(models.TextChoices):
+        CUSTOMER = "CUSTOMER", "Customer"
+        VENDOR =  "VENDOR", "Vendor"
+
+    type = models.CharField(_("Type"), max_length=50, choices=Types.choices, default=Types.CUSTOMER)
+
+    name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    def get_absolute_url(self):
+        return reverse("users:detail", kwargs={"username": self.username})
+
+class Customer(User):
+    class Meta:
+        proxy = True
+        
+class Vendor(User):
+    class Meta:
+        proxy = True
+"""
