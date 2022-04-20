@@ -34,50 +34,57 @@
 
 ### Prerequisites
 
-* Install Django with `python -m pip install Django` along with the following packages
+* Install the Django Framework 
+```sh
+python -m pip install Django
+```
+* Along with the following packages
   * SQLite 3
   * Pillow
-  * crispy forms 
+  * crispy forms
+  * curses 
 
 ### Running the Website on Windows
 
-* Clone the repository using `git clone git@github.com:RodneyMcCoy/store-website-database.git` or using *Github Desktop*
+* Clone the repository on the command line or using *Github Desktop*
   * You must have an SSH key setup if cloning with SSH
-* Ensure you have the prerequisites installed
-* Located manage.py and run `python manage.py runserver`
+```sh
+git clone git@github.com:RodneyMcCoy/store-website-database.git
+```
+* Ensure you have the prerequisites as described above
+* Located manage.py and run 
+```sh
+python manage.py runserver
+```
 * Navigate to `localhost:8000` to see the server running
 
 
 ### Running the Website on Linux
 
-* Clone the repository using `git clone git@github.com:RodneyMcCoy/store-website-database.git`
+* Clone the repository 
   * You must have an SSH key setup
-* Activate the python virtual environment by using `python -m venv env`
+```sh
+git clone git@github.com:RodneyMcCoy/store-website-database.git
+```
+* Activate the python virtual environment
+```sh
+python -m venv env
+```
   * This is extremly important since we dont have `apt-get` or access to `sudo` outside of the virtual environment
   * You can exit the virtual environment using `ctrl-c` or re-enter using `source env/bin/activate`
-* Install the prerequisites as decribed above
-* Pin your dependencies	python -m pip freeze > requirements.txt
-* Locate manage.py and run `python manage.py runserver`
+* Install the prerequisites as described above
+* Pin your dependencies	
+```sh
+python -m pip freeze > requirements.txt
+```
+* Locate manage.py and run 
+```sh
+python manage.py runserver
+```
 * Navigate to `localhost:8000` to see the server running. 
   * **Warning. We can't access local host through PUTTY**
 
 
-
-
-<!--
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
--->
 
 <p align="right">(<a href="#top">to the top</a>)</p>
 
