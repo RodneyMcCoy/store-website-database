@@ -35,9 +35,9 @@
 ### Prerequisites
 
 * Install the Django Framework 
-```sh
-python -m pip install Django
-```
+  ```sh
+  python -m pip install Django
+  ```
 * Along with the following packages
   * SQLite 3
   * Pillow
@@ -46,43 +46,38 @@ python -m pip install Django
 
 ### Running the Website on Windows
 
-* Clone the repository on the command line or using *Github Desktop*
-  * You must have an SSH key setup if cloning with SSH
-```sh
-git clone git@github.com:RodneyMcCoy/store-website-database.git
-```
-* Ensure you have the prerequisites as described above
-* Located manage.py and run 
-```sh
-python manage.py runserver
-```
-* Navigate to `localhost:8000` to see the server running
+1. Clone the repository on the command line or using *Github Desktop*. You must have an SSH key setup if cloning with SSH
+    ```sh
+    git clone git@github.com:RodneyMcCoy/store-website-database.git
+    ```
+2. Ensure you have the prerequisites as described above
+3. Located manage.py and run 
+    ```sh
+    python manage.py runserver
+    ```
+4. Navigate to `localhost:8000` to see the server running
 
 
 ### Running the Website on Linux
 
-* Clone the repository 
-  * You must have an SSH key setup
-```sh
-git clone git@github.com:RodneyMcCoy/store-website-database.git
-```
-* Activate the python virtual environment
-```sh
-python -m venv env
-```
-  * This is extremly important since we dont have `apt-get` or access to `sudo` outside of the virtual environment
-  * You can exit the virtual environment using `ctrl-c` or re-enter using `source env/bin/activate`
-* Install the prerequisites as described above
-* Pin your dependencies	
-```sh
-python -m pip freeze > requirements.txt
-```
-* Locate manage.py and run 
-```sh
-python manage.py runserver
-```
-* Navigate to `localhost:8000` to see the server running. 
-  * **Warning. We can't access local host through PUTTY**
+1. Clone the repository. You must have an SSH key setup.
+    ```sh
+    git clone git@github.com:RodneyMcCoy/store-website-database.git
+    ```
+2. Activate the python virtual environment. This is **essential** since we dont have access to `apt-get` or `sudo` in the universities VM without the virtual environment. You can exit the virtual environment using `ctrl-c` or re-enter using `source env/bin/activate`
+    ```sh
+    python -m venv env
+    ```
+3. Install the prerequisites as described above
+4. Pin your dependencies	
+    ```sh
+    python -m pip freeze > requirements.txt
+    ```
+5. Locate manage.py and run 
+    ```sh
+    python manage.py runserver
+    ```
+6. Navigate to `localhost:8000` to see the server running. **Warning. We can't access local host through PUTTY**
 
 
 
