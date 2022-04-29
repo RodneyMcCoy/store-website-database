@@ -1,8 +1,11 @@
 from django import forms
 
-""" class SearchListings(forms.Form):
-    listing_type = forms.CharField(label='search', max_length=100)
-    listing_type = request.POST.get("search", None)
+# FRUIT_CHOICES= [
+#     ('orange', 'Oranges'),
+#     ('cantaloupe', 'Cantaloupes'),
+#     ('mango', 'Mangoes'),
+#     ('honeydew', 'Honeydews'),
+#     ]
 
-class SearchBundles(forms.Form):
-    bundle_type = forms.CharField(label='bundle_type', max_length=100) """
+# class ChooseProduct(forms.ModelForm):
+#     product_choices = forms.ChoiceField(choices = FRUIT_CHOICES, label='a', required=True)

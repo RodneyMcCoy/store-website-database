@@ -13,7 +13,7 @@
             </div>
         </article>
     {% endfor %}
-    {% if is_paginated %}
+    <!-- {% if is_paginated %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
@@ -29,9 +29,11 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
-    {% endif %}
+    {% endif %} -->
 
-    <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
+    <!-- {{ products }} -->
+
+    <!-- <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
         <label for="search">Search for a Product or Service:</label>
         <select name="search" id="search">
           <option selected value=""> </option>
@@ -42,7 +44,26 @@
         </select>
     
         <input type="submit" value="Search">
+    </form> -->
+
+    <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
+        <label for="search">Search for a Product or Service:</label>
+        <select name="search" id="search">
+          <option selected value=""> </option>
+          {% for product in products %}
+          <option value="{{product}}">{{product}}</option>
+          {% endfor %}
+          <option value="Phone">Phone</option>
+          <option value="Internet">Internet</option>
+          <option value="Computer">Computer</option>
+          <option value="Repair">Repair</option>
+        </select>
+        <input type="submit" value="Search">
     </form>
+
+    {% for product in products %}
+    <p>{{product}} </p>
+    {% endfor %}
 
     <br>
 

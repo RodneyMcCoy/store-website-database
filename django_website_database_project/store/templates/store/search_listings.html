@@ -4,26 +4,34 @@
 
     <p>The product type to be searched for is: {{data }}</p>
 
-    <br>
 
-    <p>Sample Table that will be filled with Database Information</p>
 
-    <table>
-        <tr>
-          <th>Product Type</th>
-          <th>Vendor</th>
-          <th>Cost</th>
-        </tr>
-        <tr>
-          <td>Option1</td>
-          <td>Apple</td>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <td>Option2</td>
-          <td>Samsung</td>
-          <td>$200</td>
-        </tr>
-      </table>
+    {% for product in products %}
+        <article class="media content-section">
+            <p>{{ product.product_name }}
+            <br>
+            {{ product.price }}
+            <br>
+            {{ product.binding_contract }}
+            </p>
+        </article>
+    {% endfor %}
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+    {% endif %}
 
 {% endblock content %}

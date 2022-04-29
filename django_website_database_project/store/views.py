@@ -2,17 +2,27 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Customer, Vendor, User
+from .models import Post, Customer, Vendor, User, Product
 
 # I added this import to try to impliment forms. Might be useless
 from django.http import HttpResponseRedirect
 from .forms import *
 
+
 # Create your views here.
 
 def home(request):
+    p_models = Product.objects.all()
+    p_list = {}
+
+    for product in p_models:
+        p_type = product.product_type    
+        p_list.add( p_type )     
+
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
+        'form': ChooseProduct(),
+        'products': p_list
     }
     return render(request, 'store/home.html', context)
 
@@ -108,8 +118,9 @@ def show_listings(request):
         f = ""
 
     context = {
-        "title": "View Products / Services",
-        "data": f
+        'title': 'View Products / Services',
+        'data': f,
+        'products': Product.objects.filter(product_type = str(f))
     }
     return render(request, 'store/search_listings.html', context)
 
