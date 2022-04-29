@@ -49,6 +49,11 @@ class Customer(models.Model):
     name = models.CharField(("name"), max_length=255)
     background = models.CharField(("background"), max_length = 300)
 
+    USERNAME_FIELD = 'user'
+
+    def __str__(self):
+        return f'{self.user.username}\'s customer details'
+
 
 # This model class contains information related to the vendor, which is an 'overrwrite' of the base User class
 class Vendor(models.Model):
@@ -57,6 +62,11 @@ class Vendor(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(("name"), max_length=255)
+
+    USERNAME_FIELD = 'user'
+
+    def __str__(self):
+        return f'{self.user.username}\'s vendor details'
 
 
 # This model class contains information related to bundle specifics for products and/or services

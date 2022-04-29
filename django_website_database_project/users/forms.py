@@ -33,8 +33,6 @@ class ProfileUpdateForm(forms.ModelForm):
 
 class ChooseRegisterTypeForm(forms.Form):
     choice = forms.ChoiceField(choices=([('', ''), ('Customer', 'Customer'), ('Vendor', 'Vendor')]), label='Sign up as')
-    
-    
 
 
 class CustomerRegisterForm(UserCreationForm):
@@ -42,7 +40,15 @@ class CustomerRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email','password1', 'password2' ]
+    
+    @transaction.atomic
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_customer = True
+        if (commit):
+            user.save()
+        return user
 
 
 class VendorRegisterForm(UserCreationForm):
@@ -52,3 +58,10 @@ class VendorRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
     
+    @transaction.atomic
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_vendor = True
+        if (commit):
+            user.save()
+        return user

@@ -40,8 +40,8 @@ def register_customer(request):
         c_form = CustomerRegisterForm(request.POST)
         if c_form.is_valid():
             c_form.save()
-            name = c_form.cleaned_data.get('name')
-            messages.success(request, f'Your account has been created! You can now log in as a customer!')
+            name = c_form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {name}! You can now log in as a customer!')
             return redirect('login')
     else:
         c_form = CustomerRegisterForm()
@@ -56,8 +56,8 @@ def register_vendor(request):
         v_form = VendorRegisterForm(request.POST)
         if v_form.is_valid():
             v_form.save()
-            name = v_form.cleaned_data.get('name')
-            messages.success(request, f'Your account has been created! You can now log in as a vendor!')
+            name = v_form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {name} You can now log in as a vendor!')
             return redirect('login')
     else:
         v_form = VendorRegisterForm()
