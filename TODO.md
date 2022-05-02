@@ -10,5 +10,4 @@
   - [ ] Parameter: Dimensions, value: idk
 - [ ] Create querying based on best fit
 - [ ] Smooth out bundles. Add form for bundle creations, finish bundle querying.
-- [ ] Service and Product creation page dont work
 - [ ] Wishlist needs to be actually implimented
