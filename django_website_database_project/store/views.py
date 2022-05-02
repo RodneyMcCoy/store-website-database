@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Customer, Vendor, User, Product
+from .models import Post, Customer, Vendor, User, Product, Service
 
 # I added this import to try to impliment forms. Might be useless
 from django.http import HttpResponseRedirect
-from .forms import *
+from .forms import ChoosePostTypeForm
 
 
 # Create your views here.
@@ -27,12 +27,30 @@ def home(request):
     return render(request, 'store/home.html', context)
 
 
+# class PostListView(ListView):
+#     model = Product
+#     template_name = 'store/home.html'
+#     context_object_name = 'products'
+#     paginate_by = 10
+
+
 class PostListView(ListView):
     model = Post
-    template_name = 'store/home.html'
+    template_name = 'store/home.html'   # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 10
+
+
+# class UserPostListView(ListView):
+#     model = Product
+#     template_name = 'store/user_posts.html'
+#     context_object_name = 'products'
+#     paginate_by = 10
+
+#     def get_queryset(self):
+#         user = get_object_or_404(User, username=self.kwargs.get('username'))
+#         return Product.objects.filter(vendor_id = Vendor.objects.filter(user = user))
 
 
 class UserPostListView(ListView):
@@ -50,13 +68,52 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
-    model = Post
-    fields = ['title', 'content']
+def PostCreateView(request):
+    if request.method == 'POST':
+        form = ChoosePostTypeForm(request.POST)
+        action = request.POST
+        if action.get('choice') == 'Product':
+            return redirect('create_product')
+        elif action.get('choice') == 'Service':
+            return redirect('create_service')
+    else:
+        form = ChoosePostTypeForm()
+        action = request.GET
+    context = {
+        'form': form
+    }
+    return render(request, 'store/create_choice.html', context)
+
+
+class PostCreateProductView(LoginRequiredMixin, CreateView):
+    model = Product
+    template_name = 'store/create_product.html'
+    fields = ['product_type', 'product_name', 'price', 'details', 'bundle_id']
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.created_by = self.request.user
+        form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
         return super().form_valid(form)
+
+
+class PostCreateServiceView(LoginRequiredMixin, CreateView):
+    model = Service
+    template_name = 'store/create_service.html'
+    fields = ['service_type', 'service_name', 'price', 'details', 'bundle_id']
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
+        return super().form_valid(form)
+
+
+# class PostCreateView(LoginRequiredMixin, CreateView):
+#     model = Post
+#     fields = ['title', 'content']
+
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

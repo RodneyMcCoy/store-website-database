@@ -79,6 +79,9 @@ class Bundle(models.Model):
     vendor_id = models.IntegerField(("vendor_id"))
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2 , default=0)
 
+    def __str__(self):
+        return f'Bundle {self.vendor_id}'
+
 
 # This model class contains information related to a specific product that will be visible on the website to users
 class Product(models.Model):
@@ -88,21 +91,22 @@ class Product(models.Model):
     """
     #product_id = models.AutoField(primary_key=True)
     product_type = models.CharField(("product_type"), max_length=255)
-    #vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
-    vendor_id = models.IntegerField(("vendor_id"))
+    #vendor_id = models.IntegerField(("vendor_id"))
     bundle_id = models.IntegerField(("bundle_id"))
-    product_name = models.CharField(("product_name"), max_length=255)
+    product_name = models.CharField(("product_name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
+    details = models.TextField()    # Like content for Post
 
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)  # Like author for Post
 
     def __str__(self):
         return self.product_name
     
     def get_absolute_url(self):
-        return reverse('store:store-home')
+        return reverse('store-home')
 
 
 # This model class contains information related to a specific service that will be visible on the website to users
@@ -113,21 +117,22 @@ class Service(models.Model):
     """
     #service_id = models.AutoField(primary_key=True)
     service_type = models.CharField(("service_type"), max_length=255)
-    #vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
-    vendor_id = models.IntegerField(("vendor_id"))
+    #vendor_id = models.IntegerField(("vendor_id"))
     bundle_id = models.IntegerField(("bundle_id"))
-    service_name = models.CharField(("service_name"), max_length=255)
+    service_name = models.CharField(("service_name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
+    details = models.TextField()    # Like content for Post
 
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)  # Like author for Post
 
     def __str__(self):
         return self.service_name
 
     def get_absolute_url(self):
-        return reverse('store:store-home')
+        return reverse('store-home')
 
 
 # This model class contains information related to the wishlist of a customer, which contains any products or services they have wishlisted
