@@ -6,23 +6,18 @@ from .models import Post, Customer, Vendor, User, Product, Service
 
 # I added this import to try to impliment forms. Might be useless
 from django.http import HttpResponseRedirect
-from .forms import ChoosePostTypeForm
+from .forms import ChoosePostTypeForm, ChooseProduct
 
 
 # Create your views here.
 
 def home(request):
-    p_models = Product.objects.all()
-    p_list = {}
-
-    for product in p_models:
-        p_type = product.product_type    
-        p_list.add( p_type )     
+    form = ChooseProduct(request.POST)
+    action = request.POST
 
     context = {
         'posts': Post.objects.all(),
-        'form': ChooseProduct(),
-        'products': p_list
+        'form': form,
     }
     return render(request, 'store/home.html', context)
 
@@ -158,38 +153,43 @@ def wishlist(request):
 
 
 def listings(request):
+    model = Post
+    template_name = 'store/listings.html'   # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 10
+    
     context = {
-        'title': 'Listings'
+        'title': 'Listings',
+        'posts': Post.objects.all(),
     }
     return render(request, 'store/listings.html', context)
 
 
 def show_listings(request):
     if request.method == 'POST':
-        # f = SearchListings(request.POST)
-        f = request.POST.get('search', None)
-        # if f.is_valid():
-        #     return HttpResponseRedirect('/thanks/')
-
+        data = request.POST.get('choice', None)
     else:
-        f = ""
+        data = "None"
 
     context = {
-        'title': 'View Products / Services',
-        'data': f,
-        'products': Product.objects.filter(product_type = str(f))
+        'title': 'View Products or Services',
+        'data': data,
+        'products': Product.objects.filter(product_type = str(data))
     }
+
     return render(request, 'store/search_listings.html', context)
+
 
 def show_bundles(request):
     if request.method == 'POST':
-        f = request.POST.get('search', None)
+        data = request.POST.get('search', None)
 
     else:
-        f = ""
+        data = ""
 
     context = {
         "title": "View Bundles",
-        "data": f
+        "data": data
     }
     return render(request, 'store/search_listings.html', context)

@@ -3,7 +3,8 @@ from .views import PostListView, PostDetailView, PostCreateView, PostCreateProdu
 from . import views
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='store-home'),
+    # path('', PostListView.as_view(), name='store-home'),
+    path('', views.home, name='store-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/new/', PostCreateView, name='post-create'),

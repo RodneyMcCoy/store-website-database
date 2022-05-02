@@ -1,6 +1,7 @@
 {% extends "store/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-    {% for post in posts %}
+    <!-- {% for post in posts %}
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
             <div class="media-body">
@@ -13,7 +14,7 @@
             </div>
         </article>
     {% endfor %}
-    <!-- {% if is_paginated %}
+    {% if is_paginated %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
@@ -31,72 +32,26 @@
         {% endif %}
     {% endif %} -->
 
-    <!-- {{ products }} -->
 
-    <!-- <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
-        <label for="search">Search for a Product or Service:</label>
-        <select name="search" id="search">
-          <option selected value=""> </option>
-          <option value="phone">Phone</option>
-          <option value="internet">Internet</option>
-          <option value="computer">Computer</option>
-          <option value="repair">Repair</option>
-        </select>
-    
-        <input type="submit" value="Search">
-    </form> -->
+    <!-- DIRECT PRODUCT SEARCH -->
 
-    <form name = "search" action = "{% url 'store-search' %}" method="post">{% csrf_token %}
-        <label for="search">Search for a Product or Service:</label>
-        <select name="search" id="search">
-          <option selected value=""> </option>
-          {% for product in products %}
-          <option value="{{product}}">{{product}}</option>
-          {% endfor %}
-          <option value="Phone">Phone</option>
-          <option value="Internet">Internet</option>
-          <option value="Computer">Computer</option>
-          <option value="Repair">Repair</option>
-        </select>
-        <input type="submit" value="Search">
-    </form>
+    <div class="content-section">
+        <form name = "search" method="post" action = "{% url 'store-search' %}">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Product or Service Direct Search</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="search" value="search">Search</button>
+            </div>
+        </form>
+    </div>
 
-    <!-- {% for product in products %}
-    
-    <p> {{ product }} </p>
 
-    <article class="media content-section">
-        <img class="rounded-circle article-img" src="{{ product.vendor_id.user.profile.image.url }}">
-        <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="{% url 'user-posts' product.vendor_id.user.username %}">{{ product.vendor_id.name }}</a>
-            <small class="text-muted">{{ product.vendor_id.name }}</small>
-        </div>
-        <h2><a class="article-title" href="{% url 'post-detail' product.id %}">{{ product.product_name }}</a></h2>
-        <p class="article-content">{{ product.details }}</p>
-        </div>
-    </article>
-    {% endfor %}
-
-    {% for service in services %}
-    
-    <p> {{ service }} </p>
-
-    <article class="media content-section">
-        <img class="rounded-circle article-img" src="{{ service.vendor_id.user.profile.image.url }}">
-        <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="{% url 'user-posts' service.vendor_id.user.username %}">{{ service.vendor_id.name }}</a>
-            <small class="text-muted">{{ product.vendor_id.name }}</small>
-        </div>
-        <h2><a class="article-title" href="{% url 'post-detail' serrvice.id %}">{{ service.product_name }}</a></h2>
-        <p class="article-content">{{ service.details }}</p>
-        </div>
-    </article>
-    {% endfor %} -->
 
     <br>
-
+<!-- 
     <form name = "search" action = "{% url 'store-search-bundle' %}" method="post">{% csrf_token %}
         <label for="search">Search for a Bundle with this Item:</label>
         <select name="search" id="search">
@@ -108,7 +63,7 @@
         </select>
     
         <input type="submit" value="Search">
-    </form>
+    </form> -->
 
 
     

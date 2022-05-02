@@ -1,0 +1,14 @@
+# Things to be Implimented before Demo (to complete requirements describe in syllabus)
+- [ ] Add more detail to database
+  - [ ] Product Color
+  - [ ] Delivery Time
+  - [ ] Product Specific Values? (Internet Speed, Dimensions, Etc)
+- [ ] Create querying based on a given parameter + value
+  - Examples Include:
+  - [ ] Parameter: Upper Bound Price, value: Integer
+  - [ ] Parameter: Color, value: color
+  - [ ] Parameter: Dimensions, value: idk
+- [ ] Create querying based on best fit
+- [ ] Smooth out bundles. Add form for bundle creations, finish bundle querying.
+- [ ] Service and Product creation page dont work
+- [ ] Wishlist needs to be actually implimented
