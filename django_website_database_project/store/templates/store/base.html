@@ -32,8 +32,14 @@
                 <a class="nav-item nav-link" href="{% url 'store-home' %}">Home</a>
                 <!-- <a class="nav-item nav-link" href="{% url 'store-about' %}">About</a> -->
                 {% if user.is_authenticated %}
+                {% if request.user.is_customer %}
+                <a class="nav-item nav-link" href="{% url 'store-wishlist' %}">Wishlist</a>
+                {% elif request.user.is_vendor %}
+                <a class="nav-item nav-link" href="{% url 'store-listings' %}">Listings</a>
+                {% else %}
                 <a class="nav-item nav-link" href="{% url 'store-wishlist' %}">Wishlist</a>
                 <a class="nav-item nav-link" href="{% url 'store-listings' %}">Listings</a>
+                {% endif %}
                 {% endif %}
               </div>
               <!-- Navbar Right Side -->
