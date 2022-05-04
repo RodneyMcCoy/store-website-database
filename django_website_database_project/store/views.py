@@ -21,8 +21,8 @@ def home(request):
         p_type = service.service_type
         p_list.add( (str(p_type), str(p_type)) ) 
 
-    if(len(p_list) > 0):
-        p_list.add( ("", ""))
+    if(len(p_list) == 0):
+        p_list.add( ("No Products Currently in Database", "No Products Currently in Database"))
     
     action = request.POST
     form = ChooseProduct(p_list)
@@ -189,7 +189,7 @@ def show_listings(request):
     context = {
         'title': 'View Products or Services',
         'data': data,
-        'products': Product.objects.filter(product_type = str(data))
+        'products': Product.objects.filter(product_type = str(data)).union(Service.objects.filter(service_type = str(data)))
     }
 
     return render(request, 'store/search_listings.html', context)
