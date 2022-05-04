@@ -95,7 +95,7 @@ def PostCreateView(request):
 class PostCreateProductView(LoginRequiredMixin, CreateView):
     model = Product
     template_name = 'store/create_product.html'
-    fields = ['listing_type', 'name', 'price', 'binding_contract', 'bundle_id', 'details']
+    fields = ['listing_type', 'name', 'price', 'binding_contract', 'details']
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -106,7 +106,7 @@ class PostCreateProductView(LoginRequiredMixin, CreateView):
 class PostCreateServiceView(LoginRequiredMixin, CreateView):
     model = Service
     template_name = 'store/create_service.html'
-    fields = ['listing_type', 'name', 'price', 'binding_contract', 'bundle_id', 'details']
+    fields = ['listing_type', 'name', 'price', 'binding_contract',  'details']
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -227,6 +227,7 @@ def add_to_wishlist(request):
 
     add_this = request.POST
 
+    data = "yee"
 
     context = {
         'title': 'View Products or Services',

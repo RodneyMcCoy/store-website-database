@@ -94,7 +94,7 @@ class Product(models.Model):
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
     #vendor_id = models.IntegerField(("vendor_id"))
-    bundle_id = models.IntegerField(("bundle_id"))
+    # bundle_id = models.IntegerField(("bundle_id"))
     name = models.CharField(("name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
@@ -120,7 +120,7 @@ class Service(models.Model):
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
     #vendor_id = models.IntegerField(("vendor_id"))
-    bundle_id = models.IntegerField(("bundle_id"))
+    # bundle_id = models.IntegerField(("bundle_id"))
     name = models.CharField(("name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
