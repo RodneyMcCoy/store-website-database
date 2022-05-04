@@ -3,17 +3,29 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Customer, Vendor, User, Product, Service
+from django.db import models
 
 # I added this import to try to impliment forms. Might be useless
 from django.http import HttpResponseRedirect
 from .forms import ChoosePostTypeForm, ChooseProduct
 
-
 # Create your views here.
 
 def home(request):
-    form = ChooseProduct(request.POST)
+    p_list = set()
+    for product in Product.objects.all():
+        p_type = product.product_type    
+        p_list.add( (str(p_type), str(p_type)) ) 
+
+    for service in Service.objects.all():
+        p_type = service.service_type
+        p_list.add( (str(p_type), str(p_type)) ) 
+
+    if(len(p_list) > 0):
+        p_list.add( ("", ""))
+    
     action = request.POST
+    form = ChooseProduct(action, p_list)
 
     context = {
         'posts': Post.objects.all(),
