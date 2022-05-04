@@ -1,8 +1,12 @@
 from django import forms
 
 # class ChooseProduct(forms.Form):
-class ChooseProduct(forms.Form, set):
-    choice = forms.ChoiceField(choices=set, label='Select Product or Service')
+class ChooseProduct(forms.Form):
+    def __init__(self, choice_list, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['choice'] = forms.ChoiceField(choices=choice_list, label='Select Product or Service')
+
+    choice = forms.ChoiceField()
 
 
 AXIS_CHOICES = [

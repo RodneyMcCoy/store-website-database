@@ -25,7 +25,7 @@ def home(request):
         p_list.add( ("", ""))
     
     action = request.POST
-    form = ChooseProduct(action, p_list)
+    form = ChooseProduct(p_list)
 
     context = {
         'posts': Post.objects.all(),
