@@ -1,5 +1,6 @@
 {% extends "store/base.html" %}
 {% block content %}
+    
     <form name = "create_product" method="post" action = "{% url 'create_product' %}"> {% csrf_token %}
         <button class="btn btn-outline-info" type="create_product" value="create_product">Create a New Product</button>
     </form>
@@ -12,7 +13,7 @@
 
     <br>
 
-    <form name = "create_bundle" method="post" action = "{% url 'store-home' %}"> {% csrf_token %}
+    <form name = "create_bundle" method="post" action = "{% url 'create_bundle' %}"> {% csrf_token %}
         <button class="btn btn-outline-info" type="create_bundle" value="create_bundle">Create a New Bundle</button>
     </form>
 
@@ -24,21 +25,22 @@
 
     <br>
 
-    <p>View Your Products and Services</p>
+    <h3>View Your Products and Services</h3>
 
-    {% for listing in listings %}
+    {% for l in listings %}
         <article class="media content-section">
-            <p>Product
-            <br>
-            {{listing.name}}
-            <br>
-            {{listing.price}}
-            <br>
-            {{listing.binding_contract}}
+            <p>
+            {{l.listing_type}}<br>
+            {{l.vendor_id}}<br>
+            {{l.bundle_id}}<br>
+            {{l.name}}<br>
+            ${{l.price}}<br>
+            {{l.binding_contract}}<br>
+            {{l.details}}
             </p>
         </article>
     {% endfor %}
-
+    
 
     {% if is_paginated %}
     {% if page_obj.has_previous %}

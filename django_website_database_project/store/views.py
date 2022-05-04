@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Customer, Vendor, User, Product, Service
+from .models import Post, Customer, Vendor, User, Product, Service, Bundle
 from django.db import models
 
 # I added this import to try to impliment forms. Might be useless
@@ -14,11 +14,11 @@ from .forms import ChoosePostTypeForm, ChooseProduct
 def home(request):
     p_list = set()
     for product in Product.objects.all():
-        p_type = product.product_type    
+        p_type = product.listing_type    
         p_list.add( (str(p_type), str(p_type)) ) 
 
     for service in Service.objects.all():
-        p_type = service.service_type
+        p_type = service.listing_type
         p_list.add( (str(p_type), str(p_type)) ) 
 
     if(len(p_list) == 0):
@@ -95,7 +95,7 @@ def PostCreateView(request):
 class PostCreateProductView(LoginRequiredMixin, CreateView):
     model = Product
     template_name = 'store/create_product.html'
-    fields = ['product_type', 'product_name', 'price', 'details', 'bundle_id']
+    fields = ['listing_type', 'name', 'price', 'binding_contract', 'bundle_id', 'details']
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -106,8 +106,18 @@ class PostCreateProductView(LoginRequiredMixin, CreateView):
 class PostCreateServiceView(LoginRequiredMixin, CreateView):
     model = Service
     template_name = 'store/create_service.html'
-    fields = ['service_type', 'service_name', 'price', 'details', 'bundle_id']
+    fields = ['listing_type', 'name', 'price', 'binding_contract', 'bundle_id', 'details']
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
+        return super().form_valid(form)
+
+
+class PostCreateBundleView(LoginRequiredMixin, CreateView):
+    model = Bundle
+    template_name = 'store/create_bundle.html'
+    fields = ['price']
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
@@ -164,6 +174,19 @@ def wishlist(request):
     return render(request, 'store/wishlist.html', context)
 
 
+def add_to_wishlist(request):
+    user = request.user
+    
+
+
+
+def superuser(request):
+    context = {
+
+    }
+    return render(request, 'store/superuser.html', context)
+
+
 def listings(request):
     model = Post
     template_name = 'store/listings.html'   # <app>/<model>_<viewtype>.html
@@ -175,7 +198,7 @@ def listings(request):
   
     context = {
         'title': 'Listings',
-        'listings': Product.objects.filter(vendor_id = str(cur_user) ).union(Service.objects.filter(vendor_id = str(cur_user) ))
+        'listings': Product.objects.filter(vendor_id = str(cur_user) ).union(Service.objects.filter(vendor_id = str(cur_user) )),
     }
     return render(request, 'store/listings.html', context)
 
@@ -189,7 +212,8 @@ def show_listings(request):
     context = {
         'title': 'View Products or Services',
         'data': data,
-        'products': Product.objects.filter(product_type = str(data)).union(Service.objects.filter(service_type = str(data)))
+        'listings': Product.objects.filter(listing_type = str(data)).union(Service.objects.filter(listing_type = str(data))),
+        'is_customer': request.user.is_customer
     }
 
     return render(request, 'store/search_listings.html', context)

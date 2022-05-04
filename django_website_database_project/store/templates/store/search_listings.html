@@ -4,18 +4,25 @@
 
     <p>The product type to be searched for is: {{data }}</p>
 
-
-
-    {% for product in products %}
+    {% for l in listings %}
         <article class="media content-section">
-            <p>{{ product.product_name }}
-            <br>
-            {{ product.price }}
-            <br>
-            {{ product.binding_contract }}
+            <p>
+            {{l.listing_type}}<br>
+            {{l.vendor_id}}<br>
+            {{l.bundle_id}}<br>
+            {{l.name}}<br>
+            ${{l.price}}<br>
+            {{l.binding_contract}}<br>
+            {{l.details}}<br><br>
+            {% if is_customer %}
+            <form name = "add_to_wishlist" method="post" action = "add_to_wishlist"> {% csrf_token %}
+                <button class="btn btn-outline-info" type="submit" name="python_code" value="{{l}}">Add To Wishlist</button>
+            </form>
+            {%endif%}
             </p>
         </article>
     {% endfor %}
+    
     {% if is_paginated %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="?page=1">First</a>

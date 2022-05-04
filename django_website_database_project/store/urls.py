@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PostListView, PostDetailView, PostCreateView, PostCreateProductView,PostCreateServiceView, PostUpdateView, PostDeleteView, UserPostListView
+from .views import PostListView, PostDetailView, PostCreateView, PostCreateProductView,PostCreateServiceView, PostCreateBundleView, PostUpdateView, PostDeleteView, UserPostListView
 from . import views
 
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     #path('post/new/create_choice/', views.PostCreateView, name='create_choice'),
     path('post/new/create_product', PostCreateProductView.as_view(), name='create_product'),
     path('post/new/create_service', PostCreateServiceView.as_view(), name='create_service'),
+    path('post/new/create_bundle', PostCreateBundleView.as_view(), name='create_bundle'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='store-about'),
@@ -18,6 +19,7 @@ urlpatterns = [
     path('listings/', views.listings, name='store-listings'),
     path('search/', views.show_listings, name='store-search'),
     path('search/bundles/', views.show_bundles, name='store-search-bundle'),
+    path('superuser/', views.superuser, name='superuser')
 
     # path('/search/bundle/<str:type>', views.show_bundles, name='store-bundlesservices'),
 

@@ -31,11 +31,11 @@ def create_vendor(sender, instance, created, **kwargs):
 @receiver(post_save, sender=Product)
 def create_bundle(sender, instance, created, **kwargs):
     if created:
-        Post.objects.create(title=instance.product_name, content=instance.details, author=instance.vendor_id.user)
+        Post.objects.create(title=instance.name, content=instance.details, author=instance.vendor_id.user)
         Bundle.objects.create(vendor_id=instance.vendor_id.pk, price=instance.price)
 
 @receiver(post_save, sender=Service)
 def create_bundle(sender, instance, created, **kwargs):
     if created:
-        Post.objects.create(title=instance.service_name, content=instance.details, author=instance.vendor_id.user)
+        Post.objects.create(title=instance.name, content=instance.details, author=instance.vendor_id.user)
         Bundle.objects.create(vendor_id=instance.vendor_id.pk, price=instance.price)

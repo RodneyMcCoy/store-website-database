@@ -1,11 +1,14 @@
 {% extends "store/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
+    <p>This page is not finished</p>
+
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">New Service</legend>
+                <legend class="border-bottom mb-4">New Bundle</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">

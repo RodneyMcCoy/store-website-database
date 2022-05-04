@@ -90,12 +90,12 @@ class Product(models.Model):
     This includes all necessary content on the product to give the customer a complete understanding of what the product entails
     """
     #product_id = models.AutoField(primary_key=True)
-    product_type = models.CharField(("product_type"), max_length=255)
+    listing_type = models.CharField(("listing_type"), max_length=255)
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
     #vendor_id = models.IntegerField(("vendor_id"))
     bundle_id = models.IntegerField(("bundle_id"))
-    product_name = models.CharField(("product_name"), max_length=255)   # Like title for Post
+    name = models.CharField(("name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
     details = models.TextField()    # Like content for Post
@@ -103,7 +103,7 @@ class Product(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)  # Like author for Post
 
     def __str__(self):
-        return self.product_name
+        return self.name
     
     def get_absolute_url(self):
         return reverse('store-home')
@@ -116,12 +116,12 @@ class Service(models.Model):
     This includes all necessary content on the service to give the customer a complete understanding of what the service entails
     """
     #service_id = models.AutoField(primary_key=True)
-    service_type = models.CharField(("service_type"), max_length=255)
+    listing_type = models.CharField(("listing_type"), max_length=255)
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     #bundle_id = models.ForeignKey(Bundle, on_delete=models.CASCADE)
     #vendor_id = models.IntegerField(("vendor_id"))
     bundle_id = models.IntegerField(("bundle_id"))
-    service_name = models.CharField(("service_name"), max_length=255)   # Like title for Post
+    name = models.CharField(("name"), max_length=255)   # Like title for Post
     price =  models.DecimalField(("price"), max_digits=10, decimal_places=2, default=0)
     binding_contract = models.CharField(("binding_contract"), max_length=255)
     details = models.TextField()    # Like content for Post
@@ -129,7 +129,7 @@ class Service(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)  # Like author for Post
 
     def __str__(self):
-        return self.service_name
+        return self.name
 
     def get_absolute_url(self):
         return reverse('store-home')

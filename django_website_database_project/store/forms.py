@@ -14,8 +14,13 @@ AXIS_CHOICES = [
 
 ]
 
+
 # class ChooseRequirement(forms.Form):
-    
+
+
+class addToWishlist(forms.Form):
+    choice = forms.CharField()
+
 
 class ChoosePostTypeForm(forms.Form):
     choice = forms.ChoiceField(choices=([('', ''), ('Product', 'Product'), ('Service', 'Service')]), label='Create a new Product or Service')
