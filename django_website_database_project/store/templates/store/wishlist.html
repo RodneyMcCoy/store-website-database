@@ -2,4 +2,15 @@
 {% block content %}
     <h1>Wishlist Page</h1>
     <p>Users should be able to view their wishlist items here</p>
+
+    {% for w in wishlist %}
+        <article class="media content-section">
+            <p>
+            {{w.customer_id}}<br>
+            {{w.service_id}}<br>
+            {{w.product_id}}
+            </p>
+        </article>
+    {% endfor %}
+
 {% endblock content %}

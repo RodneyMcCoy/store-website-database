@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 #from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Customer, Vendor, User, Product, Service, Bundle
+from .models import Post, Customer, Vendor, User, Product, Service, Bundle, Wishlist
 from django.db import models
 
 # I added this import to try to impliment forms. Might be useless
@@ -168,16 +168,14 @@ def about(request):
 
 
 def wishlist(request):
+
+    cur_user = request.user.id
+
     context = {
-        'title': 'Wishlist'
+        'title': 'Wishlist',
+        'wishlist': Wishlist.objects.filter(customer_id=str(cur_user))
     }
     return render(request, 'store/wishlist.html', context)
-
-
-def add_to_wishlist(request):
-    user = request.user
-    
-
 
 
 def superuser(request):
@@ -214,6 +212,28 @@ def show_listings(request):
         'data': data,
         'listings': Product.objects.filter(listing_type = str(data)).union(Service.objects.filter(listing_type = str(data))),
         'is_customer': request.user.is_customer
+    }
+
+    return render(request, 'store/search_listings.html', context)
+
+
+def add_to_wishlist(request):
+    user = request.user
+
+    if request.method == 'POST':
+        data = request.POST.get('choice', None)
+    else:
+        data = "None"
+
+    add_this = request.POST
+
+
+    context = {
+        'title': 'View Products or Services',
+        'data': data,
+        'listings': Product.objects.filter(listing_type = str(data)).union(Service.objects.filter(listing_type = str(data))),
+        'is_customer': request.user.is_customer,
+        'add_this': add_this
     }
 
     return render(request, 'store/search_listings.html', context)

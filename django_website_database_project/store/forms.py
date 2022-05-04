@@ -18,8 +18,8 @@ AXIS_CHOICES = [
 # class ChooseRequirement(forms.Form):
 
 
-class addToWishlist(forms.Form):
-    choice = forms.CharField()
+# class addToWishlist(forms.Form):
+#     choice = forms.CharField()
 
 
 class ChoosePostTypeForm(forms.Form):

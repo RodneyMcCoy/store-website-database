@@ -2,7 +2,9 @@
 {% block content %}
     <h1>{{title }}</h1>
 
-    <p>The product type to be searched for is: {{data }}</p>
+    <p>The product type to be searched for is: {{data}}</p>
+
+    <p>Item to be added to wishlist is: {{add_this}}</p>
 
     {% for l in listings %}
         <article class="media content-section">
@@ -15,8 +17,8 @@
             {{l.binding_contract}}<br>
             {{l.details}}<br><br>
             {% if is_customer %}
-            <form name = "add_to_wishlist" method="post" action = "add_to_wishlist"> {% csrf_token %}
-                <button class="btn btn-outline-info" type="submit" name="python_code" value="{{l}}">Add To Wishlist</button>
+            <form name = "add_to_wishlist" method="POST" action = "{% url 'store-add-to-wishlist' %}"> {% csrf_token %}
+                <button class="btn btn-outline-info" type="add_to_wishlist" name="add_to_wishlist" value="asdf">Add To Wishlist</button>
             </form>
             {%endif%}
             </p>

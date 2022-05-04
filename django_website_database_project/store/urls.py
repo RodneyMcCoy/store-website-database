@@ -2,6 +2,8 @@ from django.urls import path
 from .views import PostListView, PostDetailView, PostCreateView, PostCreateProductView,PostCreateServiceView, PostCreateBundleView, PostUpdateView, PostDeleteView, UserPostListView
 from . import views
 
+
+
 urlpatterns = [
     # path('', PostListView.as_view(), name='store-home'),
     path('', views.home, name='store-home'),
@@ -18,8 +20,9 @@ urlpatterns = [
     path('wishlist/', views.wishlist, name='store-wishlist'),
     path('listings/', views.listings, name='store-listings'),
     path('search/', views.show_listings, name='store-search'),
+    path('search/', views.add_to_wishlist, name='store-add-to-wishlist'),
     path('search/bundles/', views.show_bundles, name='store-search-bundle'),
-    path('superuser/', views.superuser, name='superuser')
+    path('superuser/', views.superuser, name='superuser'),
 
     # path('/search/bundle/<str:type>', views.show_bundles, name='store-bundlesservices'),
 
