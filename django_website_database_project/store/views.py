@@ -171,9 +171,11 @@ def listings(request):
     ordering = ['-date_posted']
     paginate_by = 10
     
+    cur_user = request.user.id
+  
     context = {
         'title': 'Listings',
-        'posts': Post.objects.all(),
+        'listings': Product.objects.filter(vendor_id = str(cur_user) ).union(Service.objects.filter(vendor_id = str(cur_user) ))
     }
     return render(request, 'store/listings.html', context)
 
