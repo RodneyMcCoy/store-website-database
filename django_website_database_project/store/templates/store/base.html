@@ -36,6 +36,7 @@
                 <a class="nav-item nav-link" href="{% url 'store-wishlist' %}">Wishlist</a>
                 {% elif request.user.is_vendor %}
                 <a class="nav-item nav-link" href="{% url 'store-listings' %}">Listings</a>
+                <a class="nav-item nav-link" href="{% url 'store-bundles' %}">Bundles</a>
                 {% else %}
                 <a class="nav-item nav-link" href="{% url 'superuser' %}">Super User</a>
                 {% endif %}

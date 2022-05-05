@@ -11,11 +11,10 @@
             <p>
             {{l.listing_type}}<br>
             {{l.vendor_id}}<br>
-            {{l.bundle_id}}<br>
             {{l.name}}<br>
-            ${{l.price}}<br>
-            {{l.binding_contract}}<br>
-            {{l.details}}<br><br>
+            Price: ${{l.price}}<br>
+            Binding Contract: {{l.binding_contract}}<br>
+            Details: {{l.details}}<br><br>
             {% if is_customer %}
             <form name = "add_to_wishlist" method="POST" action = "{% url 'store-add-to-wishlist' %}"> {% csrf_token %}
                 <button class="btn btn-outline-info" type="add_to_wishlist" name="add_to_wishlist" value="asdf">Add To Wishlist</button>

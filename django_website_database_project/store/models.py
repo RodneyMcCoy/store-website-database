@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
+# from . import views
 
 # Create your models here.
 # Each class is its own table in the database
@@ -69,20 +70,6 @@ class Vendor(models.Model):
         return f'{self.user.username}\'s vendor details'
 
 
-# This model class contains information related to bundle specifics for products and/or services
-class Bundle(models.Model):
-    """
-    Contains information relevant to a product and/or service bundle of a specific vendor
-    """
-    #bundle_id = models.AutoField(primary_key=True)
-    #vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    vendor_id = models.IntegerField(("vendor_id"))
-    price =  models.DecimalField(("price"), max_digits=10, decimal_places=2 , default=0)
-
-    def __str__(self):
-        return f'Bundle {self.vendor_id}'
-
-
 # This model class contains information related to a specific product that will be visible on the website to users
 class Product(models.Model):
     """
@@ -133,6 +120,39 @@ class Service(models.Model):
 
     def get_absolute_url(self):
         return reverse('store-home')
+
+
+
+
+# This model class contains information related to bundle specifics for products and/or services
+class Bundle(models.Model):
+    global new_bundle_val()
+    """
+    Contains information relevant to a product and/or service bundle of a specific vendor
+    """
+    #bundle_id = models.AutoField(primary_key=True)
+    #vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    name = models.CharField(("name"), max_length=255) 
+    vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    bundle_id = models.IntegerField(("bundle_id"), null=True, unique=False, default=new_bundle_val())
+    # item_id = models.IntegerField(("item_id"))
+    # item_type = models.CharField(max_length=255, choices=[("service", "service"),("product", "product")])
+    product_id = models.ForeignKey(Product, blank=True, null=True, on_delete=models.CASCADE)
+    service_id = models.ForeignKey(Service, blank=True, null=True, on_delete=models.CASCADE)
+    price =  models.DecimalField(("price"), max_digits=10, decimal_places=2 , default=0)
+    details = models.TextField()
+
+
+    def __str__(self):
+        return f'Bundle {self.vendor_id}'
+    
+    def get_absolute_url(self):
+        return reverse('store-home')
+
+
+def new_bundle_val():
+    query = Bundle.objects.filter(vendor_id = request.user)
+    return 1
 
 
 # This model class contains information related to the wishlist of a customer, which contains any products or services they have wishlisted

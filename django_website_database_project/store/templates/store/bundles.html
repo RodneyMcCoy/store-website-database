@@ -1,36 +1,29 @@
 {% extends "store/base.html" %}
 {% block content %}
     
-    <form name = "create_product" method="post" action = "{% url 'create_product' %}"> {% csrf_token %}
-        <button class="btn btn-outline-info" type="create_product" value="create_product">Create a New Product</button>
+    <form name = "create_bundle" method="post" action = "{% url 'create_bundle' %}"> {% csrf_token %}
+        <button class="btn btn-outline-info" type="create_bundle" value="create_bundle">Create a New Bundle</button>
     </form>
 
     <br>
 
-    <form name = "create_service" method="post" action = "{% url 'create_service' %}"> {% csrf_token %}
-        <button class="btn btn-outline-info" type="create_service" value="create_service">Create a New Service</button>
+    <form name = "add_to_bundle" method="post" action = "{% url 'store-home' %}"> {% csrf_token %}
+        <button class="btn btn-outline-info" type="add_to_bundle" value="add_to_bundle">Add to a Current Bundle</button>
     </form>
 
     <br>
 
+    <h3>View Your Bundles</h3>
 
-
-    <h3>View Your Products and Services</h3>
-
-    {% for l in listings %}
-        <article class="media content-section">
-            <p>
-            {{l.listing_type}}<br>
-            {{l.vendor_id}}<br>
-            {{l.bundle_id}}<br>
-            {{l.name}}<br>
-            ${{l.price}}<br>
-            {{l.binding_contract}}<br>
-            {{l.details}}
-            </p>
-        </article>
+    {% for bundle in bundles.values %}
+            <h1>Bundle</h1>
+            {% for item in bundle %}
+            <h2>Bundle Item</h2>
+            <p>{{item.name}}</p>
+            {% endfor%}
     {% endfor %}
     
+
 
     {% if is_paginated %}
     {% if page_obj.has_previous %}

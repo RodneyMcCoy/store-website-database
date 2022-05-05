@@ -19,9 +19,10 @@ urlpatterns = [
     path('about/', views.about, name='store-about'),
     path('wishlist/', views.wishlist, name='store-wishlist'),
     path('listings/', views.listings, name='store-listings'),
+    path('bundles/', views.bundles, name='store-bundles'),
     path('search/', views.show_listings, name='store-search'),
-    path('search/', views.add_to_wishlist, name='store-add-to-wishlist'),
-    path('search/bundles/', views.show_bundles, name='store-search-bundle'),
+    # path('search/', views.add_to_wishlist, name='store-add-to-wishlist'),
+    # path('search/bundles/', views.show_bundles, name='store-search-bundle'),
     path('superuser/', views.superuser, name='superuser'),
 
     # path('/search/bundle/<str:type>', views.show_bundles, name='store-bundlesservices'),

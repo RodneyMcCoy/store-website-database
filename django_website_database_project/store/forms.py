@@ -1,4 +1,9 @@
 from django import forms
+from django.db import models
+from store.models import Bundle
+from .models import Post, Customer, Vendor, User, Product, Service, Bundle, Wishlist
+
+
 
 # class ChooseProduct(forms.Form):
 class ChooseProduct(forms.Form):
@@ -24,3 +29,24 @@ AXIS_CHOICES = [
 
 class ChoosePostTypeForm(forms.Form):
     choice = forms.ChoiceField(choices=([('', ''), ('Product', 'Product'), ('Service', 'Service')]), label='Create a new Product or Service')
+
+
+
+class CreateBundle(forms.ModelForm):
+    class Meta:
+        model = Bundle
+        fields = ['name', 'bundle_id', 'product_id', 'service_id', 'price', 'details']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.fields['bundle_id'] = bundle_val
+
+    name = models.CharField(("name"), max_length=255) 
+    bundle_id = models.IntegerField(("bundle_id"), null=True, unique=False)
+    product_id = models.ForeignKey(Product, blank=True, null=True, on_delete=models.CASCADE)
+    service_id = models.ForeignKey(Service, blank=True, null=True, on_delete=models.CASCADE)
+    price =  models.DecimalField(("price"), max_digits=10, decimal_places=2 , default=0)
+    details = models.TextField()
+
+
+# class AddToBundle(forms.ModelForm):

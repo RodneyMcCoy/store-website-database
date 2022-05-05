@@ -7,7 +7,7 @@ from django.db import models
 
 # I added this import to try to impliment forms. Might be useless
 from django.http import HttpResponseRedirect
-from .forms import ChoosePostTypeForm, ChooseProduct
+from .forms import *
 
 # Create your views here.
 
@@ -114,14 +114,30 @@ class PostCreateServiceView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+# class PostCreateBundleView(LoginRequiredMixin, CreateView):
+#     model = Bundle
+#     template_name = 'store/create_bundle.html'
+#     fields = ['name', 'product_id', 'service_id', 'price', 'details']
+
+#     def form_valid(self, form):
+#         form.instance.created_by = self.request.user
+#         form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
+#         return super().form_valid(form)
+
+
+
+
 class PostCreateBundleView(LoginRequiredMixin, CreateView):
     model = Bundle
+    form = CreateBundle()
     template_name = 'store/create_bundle.html'
-    fields = ['price']
+    fields = ['name', 'product_id', 'service_id', 'price', 'details']
+
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
         return super().form_valid(form)
+
 
 
 # class PostCreateView(LoginRequiredMixin, CreateView):
@@ -199,6 +215,40 @@ def listings(request):
         'listings': Product.objects.filter(vendor_id = str(cur_user) ).union(Service.objects.filter(vendor_id = str(cur_user) )),
     }
     return render(request, 'store/listings.html', context)
+
+
+def bundles(request):
+    model = Post
+    template_name = 'store/bundles.html'   # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 10
+    
+
+    bundle_ids = set()
+    
+    for b in Bundle.objects.filter(vendor_id = str(request.user.id)):
+        bundle_ids.add(b.id)
+
+
+    bundles = {}
+
+    for Id in bundle_ids:
+        query = Bundle.objects.filter(id = Id)
+        
+        bundle = set()
+        for listing in query:
+            bundle.add(listing)
+
+        bundles[str(Id)] = bundle
+
+
+    context = {
+        'title': 'Bundles',
+        # 'ids': bundle_ids,
+        'bundles': bundles,
+    }
+    return render(request, 'store/bundles.html', context)
 
 
 def show_listings(request):
