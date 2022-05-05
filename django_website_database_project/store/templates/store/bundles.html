@@ -18,8 +18,16 @@
     {% for bundle in bundles.values %}
             <h1>Bundle</h1>
             {% for item in bundle %}
-            <h2>Bundle Item</h2>
-            <p>{{item.name}}</p>
+            <h6>Bundle Item</h6>
+            <p>
+            {{item.name}}<br>
+            {{item.vendor_id}}<br>
+            {{item.bundle_id}}<br>
+            {{item.product_id}}<br>
+            {{item.service_id}}<br>
+            {{item.price}}<br>
+            {{item.details}}
+            </p>
             {% endfor%}
     {% endfor %}
     

@@ -131,7 +131,7 @@ class PostCreateBundleView(LoginRequiredMixin, CreateView):
     model = Bundle
     form = CreateBundle()
     template_name = 'store/create_bundle.html'
-    fields = ['name', 'product_id', 'service_id', 'price', 'details']
+    fields = ['name', 'bundle_id', 'product_id', 'service_id', 'price', 'details']
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -233,8 +233,8 @@ def bundles(request):
 
     bundles = {}
 
-    for Id in bundle_ids:
-        query = Bundle.objects.filter(id = Id)
+    for Id in bundle_ids:      
+        query = Bundle.objects.filter(bundle_id = Id)
         
         bundle = set()
         for listing in query:

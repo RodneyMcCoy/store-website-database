@@ -126,7 +126,6 @@ class Service(models.Model):
 
 # This model class contains information related to bundle specifics for products and/or services
 class Bundle(models.Model):
-    global new_bundle_val()
     """
     Contains information relevant to a product and/or service bundle of a specific vendor
     """
@@ -134,7 +133,7 @@ class Bundle(models.Model):
     #vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     name = models.CharField(("name"), max_length=255) 
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    bundle_id = models.IntegerField(("bundle_id"), null=True, unique=False, default=new_bundle_val())
+    bundle_id = models.IntegerField(("bundle_id"), null=True, unique=False)
     # item_id = models.IntegerField(("item_id"))
     # item_type = models.CharField(max_length=255, choices=[("service", "service"),("product", "product")])
     product_id = models.ForeignKey(Product, blank=True, null=True, on_delete=models.CASCADE)
@@ -147,7 +146,7 @@ class Bundle(models.Model):
         return f'Bundle {self.vendor_id}'
     
     def get_absolute_url(self):
-        return reverse('store-home')
+        return reverse('store-bundles')
 
 
 def new_bundle_val():
