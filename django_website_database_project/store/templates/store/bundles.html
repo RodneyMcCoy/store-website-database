@@ -2,14 +2,9 @@
 {% block content %}
     
     <form name = "create_bundle" method="post" action = "{% url 'create_bundle' %}"> {% csrf_token %}
-        <button class="btn btn-outline-info" type="create_bundle" value="create_bundle">Create a New Bundle</button>
+        <button class="btn btn-outline-info" type="create_bundle" value="create_bundle">Add Item to a Bundle</button>
     </form>
 
-    <br>
-
-    <form name = "add_to_bundle" method="post" action = "{% url 'store-home' %}"> {% csrf_token %}
-        <button class="btn btn-outline-info" type="add_to_bundle" value="add_to_bundle">Add to a Current Bundle</button>
-    </form>
 
     <br>
 

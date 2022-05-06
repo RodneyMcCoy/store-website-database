@@ -49,4 +49,7 @@ class CreateBundle(forms.ModelForm):
     details = models.TextField()
 
 
-# class AddToBundle(forms.ModelForm):
+class AddToBundle(forms.Form):
+    class Meta:
+        # model = Bundle
+        fields = ['name', 'bundle_id', 'product_id', 'service_id']

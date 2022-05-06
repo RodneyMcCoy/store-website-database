@@ -140,6 +140,21 @@ class PostCreateBundleView(LoginRequiredMixin, CreateView):
 
 
 
+# class PostAddToBundleView(LoginRequiredMixin, CreateView):
+#     # model = Bundle
+#     form = AddToBundle()
+#     template_name = 'store/add_to_bundle.html'
+#     fields = ['name', 'bundle_id', 'product_id', 'service_id', 'price', 'details']
+
+#     # def form_valid(self, form):
+#     #     form.instance.created_by = self.request.user
+#     #     form.instance.vendor_id = Vendor.objects.get(name=f'{self.request.user.username}')
+#     #     return super().form_valid(form)
+
+
+
+
+
 # class PostCreateView(LoginRequiredMixin, CreateView):
 #     model = Post
 #     fields = ['title', 'content']
@@ -287,18 +302,4 @@ def add_to_wishlist(request):
         'add_this': add_this
     }
 
-    return render(request, 'store/search_listings.html', context)
-
-
-def show_bundles(request):
-    if request.method == 'POST':
-        data = request.POST.get('search', None)
-
-    else:
-        data = ""
-
-    context = {
-        "title": "View Bundles",
-        "data": data
-    }
     return render(request, 'store/search_listings.html', context)
