@@ -139,6 +139,7 @@
 David Waters
 - Champion Features
   - Implimenting the Django Back End
+  - Handling user registration
 - Contact Information
   - elde1366@vandals.uidaho.edu
   - [GitHub Profile](https://github.com/iTzLegend23)
@@ -149,6 +150,7 @@ Hunter Leppek
 - Champion Features
   - Implimenting the Database Scheme using SQLite
   - Populating it with fake data using Mockaroo
+  - Writing the Documentation and Project Reports
 - Contact Information
   - lepp8728@vandals.uidaho.edu
   - [GitHub Profile](https://github.com/Hunter-SE)
@@ -157,7 +159,6 @@ Hunter Leppek
 Rodney McCoy
 - Champion Features
   - Setup and populated the GitHub Repository 
-  - Writing the Documentation and Project Reports
   - Implimenting the Bootstrap Front End
 - Contact Information
   - 208-860-4186
