@@ -6,7 +6,6 @@
   - [ ] Parameter: Color, value: color
   - [ ] Parameter: Dimensions, value: idk
 - [ ] Create querying based on best fit
-- [ ] Smooth out bundles. Add form for bundle creations, finish bundle querying.
 - [ ] Wishlist needs to be actually implimented
 
 ## Optional
