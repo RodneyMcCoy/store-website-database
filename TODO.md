@@ -1,15 +1,17 @@
-# Things to be Implimented before Demo (to complete requirements describe in syllabus)
-## Required
-- [ ] Create querying based on a given parameter + value
-  - Examples Include:
-  - [ ] Parameter: Upper Bound Price, value: Integer
-  - [ ] Parameter: Color, value: color
-  - [ ] Parameter: Dimensions, value: idk
-- [ ] Create querying based on best fit
-- [ ] Wishlist needs to be actually implimented
-
-## Optional
-- [ ] Add more detail to database
-  - [ ] Product Color
-  - [ ] Delivery Time
-  - [ ] Product Specific Values? (Internet Speed, Dimensions, Etc)
+# Important things to be Implimented before Demo (to complete requirements describe in syllabus)
+- [ ] Finish the wishlist button
+  - Have it add the product to the current users wishlist list.
+  - Hopefully do this without redirecting to a different page
+- [ ] Bundle Searching
+  - Create a drop down in the home page that allows any user to search for bundles
+  - Probably, copy the first drop down, which querys the database for products, and passes that as a choice list to the drop down form.
+  - And then return a template that displays all of the bundles that have that given item contained in them
+- [ ] *Advanced* Product / Service Searching
+  - Search for a product based on multiple axes
+  - This one is a pain. I dont know any easy way to impliment it.
+  - Most likely, we will have to hard code each different axis, with a axis and a single value
+  - Examples would be
+    - Price, Lower Bound
+    - Price, Upper Bound
+    - Delivery Time, Less than a wekk (this would require us modifying the actual product model since its not in there currently) 
+- Theres more things that could be implimented, like making the products / serivces / bundles look better on the page, and improving the bundle searching, but this is what we need to maximize our grades
