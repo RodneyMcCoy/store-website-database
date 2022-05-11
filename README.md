@@ -8,7 +8,11 @@
 
 <h2 align="center" id="heading">A Store Website + Database </h2>
 
-<p align="center">This Repo holds the implmentation for the Perfect Purchase <em>(Best Buy)</em> website. The django-based website and associated relational database built here is meant to connect customers and vendors together so various products and services can be bought and sold. <br> <br> <a href="http://example.com/">Website Not Currently Hosted Here</a></p>
+<p align="center">This Repo holds the implmentation for the Perfect Purchase <em>(Best Buy)</em> website. The django-based website and associated relational database built here is meant to connect customers and vendors together so various products and services can be bought and sold. <br> <br> 
+  
+<!-- <a href="http://example.com/">Website Not Currently Hosted Here</a> -->
+
+</p>
 
 </div>
 
