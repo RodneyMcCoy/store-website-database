@@ -272,11 +272,16 @@ def show_listings(request):
     else:
         data = "None"
 
+    if request.user.is_authenticated and request.user.is_customer:
+        is_customer = True
+    else:
+        is_customer = False
+
     context = {
         'title': 'View Products or Services',
         'data': data,
         'listings': Product.objects.filter(listing_type = str(data)).union(Service.objects.filter(listing_type = str(data))),
-        'is_customer': request.user.is_customer
+        'is_customer': is_customer
     }
 
     return render(request, 'store/search_listings.html', context)
